@@ -1,0 +1,28 @@
+.mat-table {
+  overflow: auto;
+  max-width: 600px;
+}
+
+.action-column {
+  flex: 0 0 95px;
+}
+
+.action-column-header {
+  flex: 0 0 55px;
+}
+
+.remove-column {
+  color: rgb(124, 6, 6);
+}
+
+.remove-column:hover {
+  color: rgb(255, 2, 2);
+}
+
+.edit-column:hover {
+  color: rgb(0, 156, 223);
+}
+
+.add-column:hover {
+  color: rgb(81, 201, 0);
+}

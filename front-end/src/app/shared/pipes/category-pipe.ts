@@ -1,0 +1,18 @@
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'category',
+  standalone: false
+})
+export class CategoryPipe implements PipeTransform {
+
+  transform(value: string): string {
+    switch(value) {
+      case 'front-end': return 'code';
+      case 'back-end': return 'computer';
+      case 'Integração': return 'sync_alt';
+    } 
+    return 'code'; // Default case if no match found
+  }
+
+}

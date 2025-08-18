@@ -1,0 +1,12 @@
+﻿[
+    { "_id": "1", "name": "Angular    ", "category": "front-end" },
+    { "_id": "2", "name": "Angular    ", "category": "front-end" },
+    { "_id": "3", "name": "TypeScript ", "category": "front-end" },
+    { "_id": "4", "name": "Java       ", "category": "back-end" },
+    { "_id": "5", "name": "NodeJs     ", "category": "front-end" },
+    { "_id": "6", "name": "Python     ", "category": "back-end" },
+    { "_id": "7", "name": "C#         ", "category": "back-end" },
+    { "_id": "8", "name": "JavaScript ", "category": "front-end" },
+    { "_id": "9", "name": "Json       ", "category": "Integração" },
+    { "_id": "1", "name": "REST       ", "category": "Integração" }
+]
