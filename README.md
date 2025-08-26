@@ -40,10 +40,13 @@ ng serve --proxy-config proxy.conf.js
 
 ### 🛠️ Conceitos aplicados
 - RxJs(Observables);
-- Input e Output;
+- Input, Output e Map;
 - Lazy loading;
+- DTOs, Mapper, Enums;
 - Componentes front end reutilizáveis e escaláveis;
-- Standalone Components(em desenvolvimento)
+- Desenvolvimento responsivo;
+- Acessibilidade;
+- Standalone Components(em desenvolvimento);
 - Karma e Jasmine;
 - APIs em Java: Get, PUT, POST e DELETE;
 - Entre outros.

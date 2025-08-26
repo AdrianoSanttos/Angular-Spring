@@ -1,0 +1,25 @@
+GET http://127.0.0.1:8080/api/courses
+
+###
+
+GET http://127.0.0.1:8080/api/courses/1
+
+###
+
+POST http://127.0.0.1:8080/api/courses
+content-type: application/json
+
+{
+  "name": "Course Angular",
+  "category": "Front-end",
+  "lessons": [
+    {
+      "name": "Introdução",
+      "youtubeUrl": "Fj3Zvf-N4bk"
+    },
+    {
+      "name": "Conceitos",
+      "youtubeUrl": "Fj3Zvf-N4bk"
+    }
+  ]
+}
