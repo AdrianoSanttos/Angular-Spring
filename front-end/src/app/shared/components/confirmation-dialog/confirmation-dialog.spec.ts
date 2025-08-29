@@ -8,8 +8,8 @@ describe('ConfirmationDialog', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ConfirmationDialog]
-    })
+    imports: [ConfirmationDialog]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(ConfirmationDialog);

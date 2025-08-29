@@ -1,18 +1,25 @@
 import { FormUtils } from './../../../shared/form/form-utils';
-import { Location } from '@angular/common';
+import { Location, NgIf, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators } from '@angular/forms';
+import { FormGroup, NonNullableFormBuilder, UntypedFormArray, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../../model/course';
 import { CoursesService } from '../../services/courses.service';
 import { Lesson } from '../../model/lesson';
+import { MatCard, MatCardContent, MatCardActions } from '@angular/material/card';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatFormField, MatError, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatSelect, MatOption } from '@angular/material/select';
+import { MatIconButton, MatButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-course-form',
-  standalone: false,
-  templateUrl: './course-form.html',
-  styleUrl: './course-form.scss'
+    selector: 'app-course-form',
+    templateUrl: './course-form.html',
+    styleUrl: './course-form.scss',
+    imports: [MatCard, MatToolbar, MatCardContent, ReactiveFormsModule, MatFormField, MatInput, MatError, MatLabel, MatSelect, MatOption, MatIconButton, MatIcon, NgIf, NgFor, MatCardActions, MatButton]
 })
 export class CourseForm implements OnInit {
 
