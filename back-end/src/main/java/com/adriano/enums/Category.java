@@ -1,8 +1,8 @@
 package com.adriano.enums;
 
 public enum Category {
-    BACK_END("Back-end"),
-    FRONT_END("Front-end");
+    FRONT_END("Front-end"),
+    BACK_END("Back-end");
 
     private final String value;
     

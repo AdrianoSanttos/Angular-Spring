@@ -36,7 +36,7 @@ export class FormUtils {
       return `Mínimo de ${requiredLength} caracteres`;
     }
     if (field?.hasError('maxlength')) {
-      const requiredLength = field.errors ? field.errors['maxlength'].requiredLength : 20 ;
+      const requiredLength = field.errors ? field.errors['maxlength'].requiredLength : 50 ;
       return `Máximo de ${requiredLength} caracteres`;
     }
     return 'Campo inválido';

@@ -33,7 +33,7 @@ export class CourseForm implements OnInit {
   if (course) {
     this.form = this.formBuilder.group({
       id: [course.id],
-      name: [course.name, [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      name: [course.name, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       category: [course.category, [Validators.required]],
       lessons: this.formBuilder.array(this.retrieveLessons(course), Validators.required)
     });
@@ -42,7 +42,7 @@ export class CourseForm implements OnInit {
     // ou, se preferir, reforce a inicialização:
     this.form = this.formBuilder.group({
       id: [''],
-      name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       category: ['', [Validators.required]],
       lessons: this.formBuilder.array([this.createLesson()])
     });
@@ -63,7 +63,7 @@ export class CourseForm implements OnInit {
     // Create a new lesson object
     return this.formBuilder.group({
       id: [lesson.id],
-      name: [lesson.name, [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      name: [lesson.name, [Validators.required, Validators.minLength(5), Validators.maxLength(50)]],
       youtubeUrl: [lesson.youtubeUrl, [Validators.required, Validators.minLength(5), Validators.maxLength(150)]]
     });
   }

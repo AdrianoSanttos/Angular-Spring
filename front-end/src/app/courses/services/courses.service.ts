@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Course } from '../model/course';
 import { delay, first, tap } from 'rxjs/operators';
+import { CoursePage } from '../model/course-page';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,13 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   //Observable
-  list() {
-    //pipe posso manipular a informação de maneira reativa(RxJs)
-    return this.httpClient.get<Course[]>(this.API)
+  list(page = 0, pageSize = 10) {
+    // O backend retorna um objeto paginado, não um array
+    return this.httpClient.get<CoursePage>(this.API, {params: {page, pageSize}})
     .pipe(
-      first(), // Ensures that the observable completes after the first emission
-      delay(1000), // Simulate a delay of 1 second
-      tap(courses => console.log(courses)) // Log the courses to the console
+      first(),
+      delay(1000),
+      tap(page => console.log(page))
     );
   }
 

@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, Observable, of } from 'rxjs';
+import { catchError, Observable, of, tap } from 'rxjs';
 import { ErrorDialog } from '../../../shared/components/error-dialog/error-dialog';
 import { Course } from '../../model/course';
 import { CoursesService } from '../../services/courses.service';
 import { ConfirmationDialog } from '../../../shared/components/confirmation-dialog/confirmation-dialog';
+import { CoursePage } from '../../model/course-page';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-courses',
@@ -17,7 +19,13 @@ import { ConfirmationDialog } from '../../../shared/components/confirmation-dial
 
 export class Courses implements OnInit {
 
-  courses$: Observable<Course[]> | null = null;
+  courses$: Observable<CoursePage> | null = null;
+
+  // Reference to the paginator component
+  @ViewChild(MatPaginator) paginator: MatPaginator | null = null;
+
+  pageIndex = 10;
+  pageSize = 0;
 
   constructor(
     private coursesService: CoursesService,
@@ -29,12 +37,16 @@ export class Courses implements OnInit {
     this.refresh();
   }
 
-  refresh() {
-    this.courses$ = this.coursesService.list()
+  refresh(pageEvent: PageEvent = { length: 0, pageIndex: 0, pageSize: 10 }) {
+    this.courses$ = this.coursesService.list(pageEvent.pageIndex, pageEvent.pageSize)
     .pipe(
+      tap(page => {
+        this.pageIndex = pageEvent.pageIndex;
+        this.pageSize = pageEvent.pageSize;
+      }),
       catchError(error => {
         this.onError('Erro ao carregar cursos. Entre em contato com o administrador.');
-        return of([]); // Return an empty array in case of error
+        return of({ courses: [], totalElements: 0, totalPages: 0 }); // Return an empty array in case of error
       })
     );
   }
