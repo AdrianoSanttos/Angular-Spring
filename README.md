@@ -27,7 +27,7 @@ ng serve --proxy-config proxy.conf.js
 
 8) Acessar no navegador: http://localhost:4200
 
-## ⌨️ Tecnologia
+## 💻 Tecnologia
 
 - Angular 20: https://angular.dev/installation
 - Angular Material: https://material.angular.dev
@@ -36,7 +36,9 @@ ng serve --proxy-config proxy.conf.js
 - HMTL5
 - SCSS
 - Java 24
-- Spring Boot
+- Spring Boot 3
+- Maven
+- JPA + Hibernate
 
 ### 🛠️ Conceitos aplicados
 - RxJs(Observables);
@@ -46,10 +48,36 @@ ng serve --proxy-config proxy.conf.js
 - Componentes front end reutilizáveis e escaláveis;
 - Desenvolvimento responsivo;
 - Acessibilidade;
-- Standalone Components(em desenvolvimento);
+- Standalone Components;
+- Flow Control
 - Karma e Jasmine;
 - APIs em Java: Get, PUT, POST e DELETE;
 - Entre outros.
+
+## Algumas funcionalidades disponíveis na API
+
+- ✅ Java model class with validation
+- ✅ JPA repository
+- ✅ JPA Pagination
+- ✅ H2 database
+- ✅ Controller, Service, and Repository layers
+- ✅ Has-Many relationships (Course-Lessons)
+- ✅ Java Records as DTO (Data Transfer Object)
+- ✅ Hibernate / Jakarta Validation
+
+## Screenshots
+
+Main Page with Pagination
+
+<p align="center">
+  <img src="./docs/main.jpg" alt="Main Page" width="100%">
+</p>
+
+Form with One to Many (Course-Lessons)
+
+<p align="center">
+  <img src="./docs/form.jpg" alt="Form Page" width="100%">
+</p>
 
 ## 🛠️ Outros projetos
 
